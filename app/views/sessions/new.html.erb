@@ -1,0 +1,8 @@
+<h1> lOg IN Dizzle </h1>
+
+<!-- must specify where to post i.e. must post to sessions path. it will assume user because the form is a user path -->
+<%= form_for @user, :url => { :controller => "sessions", :action => "create" } do |f| %>
+    <%= f.text_field :email %><br />
+    <%= f.password_field :password %><br />
+    <%= f.submit %>
+<% end %>
