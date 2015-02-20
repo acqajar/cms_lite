@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150212032435) do
+ActiveRecord::Schema.define(version: 20150219051656) do
 
   create_table "images", force: :cascade do |t|
     t.integer  "template_id"
@@ -27,6 +27,9 @@ ActiveRecord::Schema.define(version: 20150212032435) do
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text     "html"
+    t.text     "css"
+    t.text     "js"
   end
 
   add_index "templates", ["user_id"], name: "index_templates_on_user_id"

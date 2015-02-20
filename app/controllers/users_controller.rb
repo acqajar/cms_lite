@@ -6,22 +6,37 @@ class UsersController < ApplicationController
 
 
 	def new
-		@user = User.new
-	end
+	  	# Create a user
+	  	@user = User.new
+  	end
 
 
 	def create
-		user = User.new(params.require(:user).permit(:email,:image, :password, :password_confirmation))
-		if user.save
-			redirect_to new_session_path
-		end
-	end
+  	# parameters define creation of user
+  	@user = User.new(user_parameters)
+	  	if @user.save
+	  	# handle successful save
+	  	# notify user for successful save
+		redirect_to users_path
+		else
+	  		render 'new'
+	  	end
+  end
 
 
 	def show
-		@users = User.all
-	end
+	  	# find user by id to show said user
+	  	@user = User.find(params[:id]) 
+ 	end
 
+
+
+private 
+	# create private method that user can't use but referenced 
+	#in method of user creation
+	def user_parameters
+		params.require(:user).permit(:email,:image, :password, :password_confirmation)
+	end
 
 end
 

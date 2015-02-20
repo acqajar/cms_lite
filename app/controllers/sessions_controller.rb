@@ -11,7 +11,8 @@ class SessionsController < ApplicationController
   	u = User.where(email: params[:user][:email]).first
 	  	if u != nil && u.authenticate(params[:user][:password])
 	  		session["user_id"] = u.id.to_s
-	  		redirect_to users_path
+	  		# raise u.inspect
+        redirect_to user_path(u)
 	  end
 	end
 
