@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :sessions, only:[:new, :create, :destroy]
-  resources :users, :templates
-  root 'users#index'
+  resources :users, :templates, :home
+  root 'home#index'
 
   # resources :users
   # resource :sessions

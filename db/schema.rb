@@ -24,7 +24,6 @@ ActiveRecord::Schema.define(version: 20150219051656) do
   end
 
   create_table "templates", force: :cascade do |t|
-    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text     "html"
@@ -32,22 +31,19 @@ ActiveRecord::Schema.define(version: 20150219051656) do
     t.text     "js"
   end
 
-  add_index "templates", ["user_id"], name: "index_templates_on_user_id"
-
   create_table "texts", force: :cascade do |t|
     t.text     "body"
-    t.integer  "template_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
-    t.string   "has_secure_password"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
     t.string   "password_digest"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
 end

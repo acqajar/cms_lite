@@ -3,7 +3,7 @@ class CreateTexts < ActiveRecord::Migration
     create_table :texts do |t|
       t.text :body
       # should reference template as text is part of the table
-      t.references :template
+      t.references :user
 
       t.timestamps null: false
     end
