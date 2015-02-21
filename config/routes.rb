@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :home, :sessions, only:[:new, :create, :destroy]
-  resources :templates
-  resources :users do
+  resources :users
+  resources :templates do
     resources :texts, :images, :pages
   end
 

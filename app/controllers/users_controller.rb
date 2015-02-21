@@ -17,7 +17,7 @@ class UsersController < ApplicationController
 	  	if @user.save
 		  	# handle successful save
 		  	# notify user for successful save
-			redirect_to new_template_path 
+			redirect_to templates_path
 		else
 	  		render 'new'
 	  	end
