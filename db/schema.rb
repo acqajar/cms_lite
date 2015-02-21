@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150219051656) do
+ActiveRecord::Schema.define(version: 20150221191058) do
 
   create_table "images", force: :cascade do |t|
     t.integer  "template_id"
@@ -22,6 +22,19 @@ ActiveRecord::Schema.define(version: 20150219051656) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
+
+  create_table "pages", force: :cascade do |t|
+    t.text     "css"
+    t.text     "js"
+    t.text     "html"
+    t.integer  "template_id"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "pages", ["template_id"], name: "index_pages_on_template_id"
+  add_index "pages", ["user_id"], name: "index_pages_on_user_id"
 
   create_table "templates", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -44,6 +57,7 @@ ActiveRecord::Schema.define(version: 20150219051656) do
     t.string   "password_digest"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.integer  "template_id"
   end
 
 end

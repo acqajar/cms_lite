@@ -15,9 +15,9 @@ class UsersController < ApplicationController
   	# parameters define creation of user
   	@user = User.new(user_parameters)
 	  	if @user.save
-	  	# handle successful save
-	  	# notify user for successful save
-		redirect_to users_path
+		  	# handle successful save
+		  	# notify user for successful save
+			redirect_to new_template_path 
 		else
 	  		render 'new'
 	  	end

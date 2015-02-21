@@ -1,6 +1,7 @@
 class Template < ActiveRecord::Base
-  belongs_to :user
+  has_many :users
   has_many :texts
   has_many :images
+  has_many :pages
   # validates :login
 end

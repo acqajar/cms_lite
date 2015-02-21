@@ -14,15 +14,16 @@ class TemplatesController < ApplicationController
 
 
 	def index
-		@template = Template.find(:all)
+		# user = User.where(id: params[:user_id]).first
+		@templates = Template.all
 	end
 
-	def home
-	end
 
 
 	def new
-		# @template = Template.new
+		puts "============================="
+		puts current_user.inspect
+		puts "============================="
 	end
 
 

@@ -1,10 +1,20 @@
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
 <h1> SiGN Ups Dizzle </h1>
 
 <h2>
 <%= form_for @user do |f| %>
 	Email <%= f.text_field :email %> <br>
+	<br>
 	Password <%= f.password_field :password %> <br>
-	Retype pw<%= f.password_field :password_confirmation %> <br>
+	<br>
+	Retype pw <%= f.password_field :password_confirmation %> <br>
+	<br>
 	<%= f.submit %>
 <% end %>
 </h2>
