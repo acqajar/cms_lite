@@ -1,4 +1,21 @@
-<%= form_for @page do |f| %>
-<%= f.text :custom_text %>
-<%= f.submit %>
+
+<html>
+
+<style type="text/css">
+<%= raw @page.css %>
+</style>
+
+<script type="text/javascript">
+<%= raw @page.js %>
+</script>
+
+
+
+<%= raw @page.html %> 
+
+
+</html>
+<%= form_for [@user, @page] do |f| %>
+	<%= f.text_field :html %>
+	<%= f.submit %>
 <% end %>

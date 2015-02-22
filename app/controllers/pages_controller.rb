@@ -1,6 +1,5 @@
 class PagesController < ApplicationController
 
-
 	def create
 		# 
 		@template = Template.where(:id => params[:template_id]).first
@@ -11,16 +10,11 @@ class PagesController < ApplicationController
 	 		:js => @template.js
 			)
 		if @page.save
-			redirect_to edit_page_path(@page)
+			redirect_to edit_user_page_path(current_user, @page)
 		end
 	end
-
-
-
-
-
-
-
-
-
+	def edit
+		@user = User.where(id: params[:user_id]).first
+		@page = Page.where(id: params[:id]).first
+	end
 end

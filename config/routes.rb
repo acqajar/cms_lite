@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   resources :home, :sessions, only:[:new, :create, :destroy]
-  resources :users
-  resources :templates do
-    resources :texts, :images, :pages
+  resources :templates
+  resources :users do
+    resources :pages
   end
 
   root 'home#index'
