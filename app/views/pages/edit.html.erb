@@ -14,11 +14,16 @@
 
 
 <%= raw @page.html %> 
-<!-- change size of text field and placement? form for nested user - pages -->
-<%= simple_form_for [@user, @page] do |f| %>
-	<%= f.text_field :custom_text %>
+
+<%= form_for(@user) do |f| %>
+Choose File <%= f.file_field :avatar %>
 	<%= f.submit %>
-<% end %>
+	<% end %>
+
+<%= image_tag @user.avatar.url %>
+<!-- change size of text field and placement? form for nested user - pages -->
+
+
 
 
 </html>

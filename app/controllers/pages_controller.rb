@@ -1,7 +1,8 @@
 class PagesController < ApplicationController
 
+
+
 	def create
-		# 
 		@template = Template.where(:id => params[:template_id]).first
 		@page = Page.new(:template_id => @template.id, 
 	 		:user_id => params[:user_id], 

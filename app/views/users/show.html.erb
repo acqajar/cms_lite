@@ -5,6 +5,7 @@
 <br>
 <br>
 
+<%=link_to "Pick a Themes !", templates_path, class: "btn btn-info btn-lg" %>
 
 <%= form_for(@user) do |f| %>
 Choose File <%= f.file_field :avatar %>
@@ -12,6 +13,9 @@ Choose File <%= f.file_field :avatar %>
 	<% end %>
 
 <%= image_tag @user.avatar.url %>
+
+
+
  
 
 <%#= @user.name %> <br>

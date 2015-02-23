@@ -32,4 +32,4 @@ class TemplatesController < ApplicationController
 		@template = Template.find(params[:id])
 	end
 
-end
+end	
