@@ -5,6 +5,8 @@
 <%= raw @page.css %>
 </style>
 
+
+
 <script type="text/javascript">
 <%= raw @page.js %>
 </script>
@@ -13,7 +15,7 @@
 
 <%= raw @page.html %> 
 <!-- change size of text field and placement? form for nested user - pages -->
-<%= form_for [@user, @page] do |f| %>
+<%= simple_form_for [@user, @page] do |f| %>
 	<%= f.text_field :custom_text %>
 	<%= f.submit %>
 <% end %>

@@ -22,6 +22,12 @@ class PagesController < ApplicationController
 	end
 
 
+	def index
+		@page = Page.where(user_id: current_user.id)
+	end
+
+	def show
+	end
 
 	def update  
 	 

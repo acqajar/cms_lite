@@ -36,7 +36,7 @@ private
 	# create private method that user can't use but referenced 
 	#in method of user creation
 	def user_parameters
-		params.require(:user).permit(:email,:image, :password, :password_confirmation)
+		params.require(:user).permit(:name, :email, :image, :password, :password_confirmation)
 	end
 
 end

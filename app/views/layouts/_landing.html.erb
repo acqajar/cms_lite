@@ -9,8 +9,15 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 </head>
 <body>
+    <br>
+    <br>
+    <br>
     <%#= @current_user.inspect %>
-<div class="row">
+<div class="row, padding-top: 10px">
+        <h1> CHOOSE A THEME ! </h1>
+        <br>
+        <br>
+        <br>
             <div class="col-sm-4">
                 <%= link_to image_tag('http://startbootstrap.com/assets/img/templates/grayscale.jpg', class: 'img-circle img-responsive img-center choices'), user_pages_path(user_id: current_user.id, template_id: 3), method: :post %>
                 <!-- must loop through, not bed hard-coded -->
