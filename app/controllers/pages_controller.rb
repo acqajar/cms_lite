@@ -13,8 +13,21 @@ class PagesController < ApplicationController
 			redirect_to edit_user_page_path(current_user, @page)
 		end
 	end
+
+
+
 	def edit
 		@user = User.where(id: params[:user_id]).first
 		@page = Page.where(id: params[:id]).first
 	end
-end
+
+
+
+	def update  
+	 
+	end  
+
+
+
+	end
+

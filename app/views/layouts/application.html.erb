@@ -13,8 +13,14 @@
                 <%= link_to "CMSLite", root_path, id: "logo" %> 
                 <nav>
                     <ul class="nav navbar-nav navbar-right"> 
-<!--                         <li><%= link_to "About", '#' %></li> 
- -->                        <li><%= link_to "Log in", new_session_path %></li>
+<!--                         <li><%= link_to "About", '#' %></li>
+ -->   
+ <% if current_user == nil %>                     
+  <li><%= link_to "Log in", new_sessions_path %></li>
+  <% else %>
+  <li><%= link_to "GET Out!", sessions_path, method: :delete%></li>
+  <% end %>
+
                     </ul> 
                 </nav>
      </div>
