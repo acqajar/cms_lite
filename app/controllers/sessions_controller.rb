@@ -2,6 +2,9 @@ class SessionsController < ApplicationController
 	# establish a session based on a USER logging in. Not a session.
   def new
   	@user = User.new
+    if params[:user_created] == "true"
+      @user_created_message = "successfully signed in!"
+    end
   end
 
   def create
@@ -13,11 +16,14 @@ class SessionsController < ApplicationController
 	  		session["user_id"] = u.id.to_s
 	  		# raise u.inspect
         redirect_to user_path(u)
+      else 
+        redirect_to new_user_path
 	  end
 	end
 
   def destroy
   	session.destroy 
+    redirect_to root_path
   end
 
 end
