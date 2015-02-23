@@ -1,5 +1,18 @@
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 
+<%= form_for(@user) do |f| %>
+Choose File <%= f.file_field :avatar %>
+	<%= f.submit %>
+	<% end %>
+
+<%= image_tag @user.avatar.url %>
+ 
 
 <%#= @user.name %> <br>
 <%#= @user.email %>
