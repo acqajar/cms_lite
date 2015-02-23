@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
   	# go to users table, select stuff from users email is equal to 
   	u = User.where(email: params[:user][:email]).first
 	  	if u != nil && u.authenticate(params[:user][:password])
-	  		session["user_id"] = u.id.to_s
+	  		session["user_id"] = @user.id.to_s
 	  		# raise u.inspect
         redirect_to user_path(u)
       else 

@@ -17,7 +17,8 @@ class UsersController < ApplicationController
 	  	if @user.save
 		  	# handle successful save
 		  	# notify user for successful save
-			redirect_to templates_path
+		  	session["user_id"] = @user.id.to_s
+			redirect_to templates_path(user_created: 'true')
 		else
 	  		render 'new'
 	  	end
