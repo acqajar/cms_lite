@@ -1,5 +1,5 @@
 class Image < ActiveRecord::Base
-	belongs_to :templates
+	belongs_to :template
 	validates :login
 
 end
