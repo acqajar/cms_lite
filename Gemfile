@@ -7,8 +7,8 @@ gem 'bootstrap-sass', '~> 3.3.3'
 # Get Sprockets
 gem 'sprockets', '~> 3.0.0.beta.8'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
-# gem 'pg'
+# gem 'sqlite3'
+gem 'pg'
 gem "paperclip", "~> 4.2"
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'

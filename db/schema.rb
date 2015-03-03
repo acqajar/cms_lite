@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20150223153931) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "images", force: :cascade do |t|
     t.integer  "template_id"
     t.string   "name"
@@ -34,8 +37,8 @@ ActiveRecord::Schema.define(version: 20150223153931) do
     t.text     "custom_text"
   end
 
-  add_index "pages", ["template_id"], name: "index_pages_on_template_id"
-  add_index "pages", ["user_id"], name: "index_pages_on_user_id"
+  add_index "pages", ["template_id"], name: "index_pages_on_template_id", using: :btree
+  add_index "pages", ["user_id"], name: "index_pages_on_user_id", using: :btree
 
   create_table "templates", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -65,4 +68,6 @@ ActiveRecord::Schema.define(version: 20150223153931) do
     t.datetime "avatar_updated_at"
   end
 
+  add_foreign_key "pages", "templates"
+  add_foreign_key "pages", "users"
 end
