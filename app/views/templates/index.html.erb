@@ -32,6 +32,12 @@
         </div>
 
 <%= render "layouts/templatesnew" %>
+<hr> 
+
+<% @templates.each do |t| %>
+<% puts("Template.create(html:'" + t.html.gsub("'","\'")+ "')") %>
+<% end %>
+
 </body>
 </html>
 
